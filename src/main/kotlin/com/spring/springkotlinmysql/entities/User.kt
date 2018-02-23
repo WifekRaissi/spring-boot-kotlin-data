@@ -1,4 +1,4 @@
-package com.spring.springkotlinmysql
+package com.spring.springkotlinmysql.entities
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

@@ -81,6 +81,11 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.25</version>
 		</dependency>
+		<dependency>
+			<groupId>io.github.microutils</groupId>
+			<artifactId>kotlin-logging</artifactId>
+			<version>1.4.9</version>
+		</dependency>
 	</dependencies>
 
 	<build>

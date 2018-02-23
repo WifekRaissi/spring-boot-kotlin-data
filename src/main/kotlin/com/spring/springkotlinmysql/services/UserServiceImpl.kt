@@ -3,16 +3,16 @@ package com.spring.springkotlinmysql.services
 //import mu.KotlinLogging
 import com.spring.springkotlinmysql.entities.User
 import com.spring.springkotlinmysql.repositories.UserRepository
-//import mu.KotlinLogging
+import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import java.util.*
+//import java.util.*
 
 
 @Service
 class UserServiceImpl: UserService {
 
-   // private val log = KotlinLogging.logger {}
+    private val log = KotlinLogging.logger {}
     @Autowired
     lateinit var repository: UserRepository
 
@@ -21,11 +21,12 @@ class UserServiceImpl: UserService {
 
     override fun getUserById(id:Long)=
             repository.getOne(id)
-    override fun addUser(user: User)=
-            repository.save(user)
-
-           // log.info("${user.name},added!!!")
-
+    override fun addUser(user: User): User{
+        log.info("${user.firstname},added!!!")
+        repository.save(user)
+           return user
+        // log.info("${user.name},added!!!")
+    }
 
 
     override fun deleteUser(id: Long)=

@@ -25,15 +25,16 @@ class UserServiceImpl: UserService {
         log.info("${user.firstname},added!!!")
         repository.save(user)
            return user
-        // log.info("${user.name},added!!!")
+
     }
 
-
-    override fun deleteUser(id: Long)=
+    override fun deleteUser(id: Long){
+        log.info("user deleted!!")
             repository.delete(id)
-         //   log.info("$name,deleted!!!")
-    override fun deleteAllUsers()=
-                 repository.deleteAll()
-
+         }
+    override fun deleteAllUsers() {
+        log.info("All users deleted!!")
+        repository.deleteAll()
+    }
 
 }

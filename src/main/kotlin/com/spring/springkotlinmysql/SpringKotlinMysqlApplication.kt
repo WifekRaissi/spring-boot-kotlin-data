@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing
 @EnableJpaAuditing
 class SpringKotlinMysqlApplication
 
-
 fun main(args: Array<String>) {
     SpringApplication.run(SpringKotlinMysqlApplication::class.java, *args)
 

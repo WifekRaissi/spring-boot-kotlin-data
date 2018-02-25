@@ -1,7 +1,7 @@
 package com.spring.springkotlinmysql.controllers
 
 import com.spring.springkotlinmysql.entities.User
-import com.spring.springkotlinmysql.repositories.UserRepository
+
 import com.spring.springkotlinmysql.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*

@@ -16,25 +16,41 @@ class UserServiceImpl: UserService {
     @Autowired
     lateinit var repository: UserRepository
 
-    override fun getUsers()=
+    override fun getUsers() =
             repository.findAll()
+    //findAll()
 
-    override fun getUserById(id:Long)=
-            repository.getOne(id)
-    override fun addUser(user: User): User{
+    override fun getUserById(id: Long) =
+            repository.findOne(id)
+    //.getOne(id)
+
+    override fun getUserByName(firstname: String) =
+            repository.findByfirstname(firstname)
+
+
+    override fun addUser(user: User): User {
         log.info("${user.firstname},added!!!")
         repository.save(user)
-           return user
+        return user
 
     }
 
-    override fun deleteUser(id: Long){
+    override fun deleteUser(id: Long) {
         log.info("user deleted!!")
-            repository.delete(id)
-         }
+        repository.delete(id)
+    }
+
     override fun deleteAllUsers() {
         log.info("All users deleted!!")
         repository.deleteAll()
     }
 
+    override fun updateUser(id: Long, user: User) {
+        assert(user.id == id)
+        repository.save(user)
+
+
+    }
+
 }
+

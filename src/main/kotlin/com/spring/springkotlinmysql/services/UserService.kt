@@ -9,5 +9,7 @@ interface UserService {
     fun deleteUser(id: Long)
     fun deleteAllUsers()
     fun getUserById(id: Long): User?
-    fun getUsers(): MutableList<User>?
+    fun getUsers(): MutableIterable<User>?
+    fun getUserByName(firstname: String): List<User>
+    fun updateUser(id: Long, user: User)
 }

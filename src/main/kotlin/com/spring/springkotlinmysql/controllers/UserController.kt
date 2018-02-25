@@ -19,8 +19,11 @@ class UserController {
     fun getAllUsers() =
             userService.getUsers()
 
-    @GetMapping(value = "/users/{id}")
+    @GetMapping(value = "/{id}")
     fun getUserById(@PathVariable("id") id: Long) = userService.getUserById(id)
+
+    @GetMapping(value = "/users/{firstname}")
+    fun getUserByFirstname(@PathVariable("firstname") firstname: String) = userService.getUserByName(firstname)
 
     @PostMapping("/users")
     fun createUser(@Valid @RequestBody user: User) =
@@ -34,10 +37,13 @@ class UserController {
     fun deleteUsers() =
             userService.deleteAllUsers()
 
-    /* @PutMapping("/users/{id}")
+    @PutMapping("/users/{id}")
     fun updateUser(@PathVariable ("id")id:Long, @RequestBody user: User)=
-                   repository.save(user)
-    }*/
+                   userService.updateUser(id,user)
 
 
-}
+
+    }
+
+
+

@@ -44,12 +44,16 @@ class UserServiceImpl: UserService {
         log.info("All users deleted!!")
     }
 
-    override fun updateUser(id: Long, user: User) {
-        assert(user.id == id)
-        repository.save(user)
-        log.info("${user.firstname},updated!!!")
 
+
+    override fun updateUser(id: Long, user: User):User {
+        val currentUser = repository.findOne(id)
+         if (currentUser != null) repository.save(currentUser.copy(id,user.firstname,user.lastname))
+      return currentUser
+        log.info("${user.firstname},updated!!!")
     }
+
+
 
 }
 

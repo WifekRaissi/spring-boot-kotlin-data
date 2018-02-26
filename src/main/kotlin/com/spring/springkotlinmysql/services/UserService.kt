@@ -11,6 +11,5 @@ interface UserService {
     fun getUserById(id: Long): User?
     fun getUsers(): MutableIterable<User>?
     fun getUserByName(firstname: String): List<User>
-    //fun updateUser(id: Long, user: User)
     fun updateUser(id: Long, user: User): User
 }

@@ -39,8 +39,8 @@ class UserController {
 
     @PutMapping("/users/{id}")
     fun updateUser(@PathVariable ("id")id:Long, @RequestBody user: User)=
-                   userService.updateCity(id,user)
-                           //updateUser(id,user)
+                   userService.updateUser(id,user)
+
 
 
 

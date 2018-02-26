@@ -22,7 +22,7 @@ class UserServiceImpl: UserService {
             repository.findOne(id)
 
 
-    override fun getUserByName(firstname: String) =
+    override fun getUserByFirstName(firstname: String) =
             repository.findByfirstname(firstname)
 
 
@@ -49,8 +49,9 @@ class UserServiceImpl: UserService {
     override fun updateUser(id: Long, user: User):User {
         val currentUser = repository.findOne(id)
          if (currentUser != null) repository.save(currentUser.copy(id,user.firstname,user.lastname))
-      return currentUser
         log.info("${user.firstname},updated!!!")
+      return currentUser
+
     }
 
 

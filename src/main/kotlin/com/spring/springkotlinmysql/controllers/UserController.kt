@@ -23,7 +23,8 @@ class UserController {
     fun getUserById(@PathVariable("id") id: Long) = userService.getUserById(id)
 
     @GetMapping(value = "/users/{firstname}")
-    fun getUserByFirstname(@PathVariable("firstname") firstname: String) = userService.getUserByName(firstname)
+    fun getUserByFirstname(@PathVariable("firstname") firstname: String) =
+            userService.getUserByFirstName(firstname)
 
     @PostMapping("/users")
     fun createUser(@Valid @RequestBody user: User) =
